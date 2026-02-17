@@ -72,10 +72,13 @@ Die Website zeigt:
 ### Umgebungsvariablen:
 Die `.env` Datei ist bereits konfiguriert mit einem Google Gemini API Key:
 ```
-VITE_GEMINI_API_KEY=AIzaSyC2IkdtbHNU4rervNa0CgZtgEkhyVGdbiI
+VITE_GEMINI_API_KEY=your_api_key_here
 ```
 
-⚠️ **Sicherheitshinweis:** Für Produktion solltest du deinen eigenen API Key verwenden!
+⚠️ **Sicherheitshinweis:** 
+- Verwende deinen eigenen API Key von https://aistudio.google.com/apikey
+- Committe niemals echte API Keys in das Repository
+- Die `.env` Datei ist in `.gitignore` und wird nicht hochgeladen
 
 ## 📚 Weitere hilfreiche Befehle:
 
