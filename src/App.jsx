@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import NFTViewer from './components/NFTViewer';
@@ -587,6 +588,9 @@ function App() {
           />
         )}
       </AnimatePresence>
+      
+      {/* Vercel Speed Insights */}
+      <SpeedInsights />
     </div>
   );
 }
