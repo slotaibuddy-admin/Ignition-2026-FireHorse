@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-export default function ModuleCard({ module }) {
+export default function ModuleCard({ module, price = "19.99" }) {
   const [particles, setParticles] = useState([]);
 
   useEffect(() => {
@@ -190,7 +190,7 @@ export default function ModuleCard({ module }) {
               ease: "easeInOut",
             }}
           >
-            € 19.99
+            € {price}
           </motion.div>
 
           {/* CTA Button - Aggressively Pulsing */}
@@ -211,6 +211,8 @@ export default function ModuleCard({ module }) {
             }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            aria-label="Purchase this NFT module now"
+            role="button"
           >
             🔥 LOCK THIS TRIGGER NOW 🔥
           </motion.button>

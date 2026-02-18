@@ -297,7 +297,7 @@ body {
 /* Price Display */
 .price-display {
   text-align: center;
-  font-size: 4.5rem;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 900;
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #fbbf24 100%);
   -webkit-background-clip: text;

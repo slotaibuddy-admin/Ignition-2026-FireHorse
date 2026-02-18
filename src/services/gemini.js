@@ -43,6 +43,9 @@ export async function generateCyberModule() {
   } catch (error) {
     console.error('Error generating cyber module:', error);
     
+    // Log warning about using fallback data
+    console.warn('Using fallback demo module due to API error. Check API configuration or network connectivity.');
+    
     // Return a fallback demo module for testing/demo purposes
     return {
       name: "Phoenix Inferno Core",
