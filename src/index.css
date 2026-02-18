@@ -9,6 +9,10 @@
   --fire-black-light: #1A1A1A;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -166,7 +170,7 @@ body {
 .vortex-background {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, 
+  background: radial-gradient(ellipse at center,
     rgba(59, 130, 246, 0.15) 0%,
     rgba(139, 92, 246, 0.1) 40%,
     rgba(10, 10, 26, 0.9) 100%);
@@ -234,7 +238,7 @@ body {
 /* NFT Object with Glow */
 .nft-object {
   position: relative;
-  background: linear-gradient(135deg, 
+  background: linear-gradient(135deg,
     rgba(59, 130, 246, 0.3) 0%,
     rgba(139, 92, 246, 0.25) 50%,
     rgba(251, 191, 36, 0.2) 100%);
@@ -282,7 +286,7 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(59, 130, 246, 0.3);
   border-radius: 1rem;
-  padding: 1.5rem;
+  padding: 1.25rem;
   text-align: center;
   transition: all 0.3s ease;
 }
@@ -350,6 +354,12 @@ body {
   transform: translateY(-2px);
 }
 
+.cta-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
 /* Psychological Trigger Texts */
 .trigger-text-scarcity {
   text-align: center;
@@ -376,4 +386,133 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ========================================
+   NEW STYLES: Landing Page & Web3
+   ======================================== */
+
+/* Fixed Header Glass */
+.header-glass {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 107, 0, 0.1);
+}
+
+/* Hero Section */
+.hero-section {
+  padding-top: 80px;
+}
+
+.hero-bg-gradient {
+  background: radial-gradient(ellipse at 50% 80%,
+    rgba(255, 107, 0, 0.12) 0%,
+    rgba(255, 45, 0, 0.06) 30%,
+    rgba(10, 10, 10, 0.95) 60%,
+    var(--fire-black) 100%);
+}
+
+/* Polygon Network Badge */
+.polygon-badge {
+  background: linear-gradient(135deg, #8247e5 0%, #a855f7 100%);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: white;
+  box-shadow: 0 2px 8px rgba(130, 71, 229, 0.3);
+}
+
+/* Wallet Button */
+.wallet-button {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 107, 0, 0.25);
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wallet-button:hover {
+  background: rgba(255, 107, 0, 0.12);
+  border-color: rgba(255, 107, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+.wallet-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Refresh Counter Badge */
+.refresh-badge {
+  background: rgba(255, 107, 0, 0.15);
+  border: 1px solid rgba(255, 107, 0, 0.35);
+  border-radius: 9999px;
+  padding: 0.35rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 200, 150, 0.9);
+}
+
+/* Bundle Purchase Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-card {
+  background: rgba(15, 15, 30, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 107, 0, 0.25);
+  border-radius: 2rem;
+  padding: 2rem;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(255, 107, 0, 0.15),
+              0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+/* Section Divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--fire-orange) 30%,
+    var(--fire-red) 70%,
+    transparent 100%);
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
+}
+
+/* NFT Unique ID Hash */
+.nft-hash {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.05em;
+}
+
+/* Forge Section */
+.forge-section {
+  padding-top: 80px;
 }

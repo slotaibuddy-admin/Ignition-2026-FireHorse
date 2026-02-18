@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Render Test</title>
+</head>
+<body style="margin: 0; background: black; color: white; font-family: Arial;">
+    <h2>Canvas Rendering Test</h2>
+    <div id="container" style="width: 400px; height: 560px; border: 2px solid orange;"></div>
+    
+    <script>
+        // Test card generation
+        try {
+            const canvas = document.createElement('canvas');
+            canvas.width = 400;
+            canvas.height = 560;
+            
+            const ctx = canvas.getContext('2d');
+            console.log('Canvas context:', !!ctx);
+            
+            // Background gradient
+            const bgGradient = ctx.createLinearGradient(0, 0, 400, 560);
+            bgGradient.addColorStop(0, '#FF6B00');
+            bgGradient.addColorStop(1, '#FF2D00');
+            ctx.fillStyle = bgGradient;
+            ctx.fillRect(0, 0, 400, 560);
+            
+            // Add text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 32px Arial';
+            ctx.fillText('Phoenix Fire', 20, 60);
+            ctx.font = '24px Arial';
+            ctx.fillText('HP: 95', 320, 60);
+            
+            // Get data URL
+            const dataUrl = canvas.toDataURL('image/png');
+            console.log('Data URL length:', dataUrl.length);
+            console.log('Data URL starts with:', dataUrl.slice(0, 100));
+            
+            // Display on page
+            const img = new Image();
+            img.onload = () => {
+                console.log('Image loaded!');
+                document.getElementById('container').innerHTML = '';
+                document.getElementById('container').appendChild(img);
+            };
+            img.onerror = () => {
+                console.error('Image failed to load');
+            };
+            img.src = dataUrl;
+            img.style.width = '100%';
+            img.style.height = '100%';
+            
+        } catch (error) {
+            console.error('Error:', error);
+            document.body.innerHTML += '<p style="color: red;">Error: ' + error.message + '</p>';
+        }
+    </script>
+</body>
+</html>
