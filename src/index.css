@@ -149,3 +149,231 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* NFT Card Enhancements */
+.nft-glass-card {
+  background: rgba(10, 10, 26, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+              0 0 80px rgba(59, 130, 246, 0.2);
+  overflow: hidden;
+}
+
+/* Animated Vortex Background */
+.vortex-background {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, 
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(139, 92, 246, 0.1) 40%,
+    rgba(10, 10, 26, 0.9) 100%);
+  overflow: hidden;
+}
+
+.vortex-particle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+/* Energy Rings */
+.energy-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid;
+  pointer-events: none;
+}
+
+.energy-ring-1 {
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: rgba(59, 130, 246, 0.3);
+  animation: pulse-ring 3s ease-in-out infinite;
+}
+
+.energy-ring-2 {
+  width: 450px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: rgba(139, 92, 246, 0.25);
+  animation: pulse-ring 4s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.energy-ring-3 {
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: rgba(251, 191, 36, 0.2);
+  animation: pulse-ring 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes pulse-ring {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* NFT Object with Glow */
+.nft-object {
+  position: relative;
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.3) 0%,
+    rgba(139, 92, 246, 0.25) 50%,
+    rgba(251, 191, 36, 0.2) 100%);
+  border: 3px solid rgba(59, 130, 246, 0.5);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  overflow: visible;
+}
+
+.nft-inner-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center,
+    rgba(59, 130, 246, 0.4) 0%,
+    transparent 70%);
+  border-radius: 1.5rem;
+  animation: inner-glow 2s ease-in-out infinite;
+}
+
+@keyframes inner-glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+/* NFT Particles */
+.nft-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle,
+    rgba(251, 191, 36, 0.8) 0%,
+    rgba(59, 130, 246, 0.4) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+/* Stat Cards */
+.stat-card {
+  background: rgba(59, 130, 246, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+/* Price Display */
+.price-display {
+  text-align: center;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  margin: 2rem 0;
+}
+
+/* CTA Button */
+.cta-button {
+  width: 100%;
+  background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
+  color: white;
+  border: none;
+  padding: 1.75rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+}
+
+.cta-button:active {
+  transform: translateY(-2px);
+}
+
+/* Psychological Trigger Texts */
+.trigger-text-scarcity {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fb923c;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 15px rgba(251, 146, 60, 0.6);
+  background: linear-gradient(135deg, #fb923c 0%, #ef4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.trigger-text-exclusivity {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, #ffffff 0%, #fbbf24 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

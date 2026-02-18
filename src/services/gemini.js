@@ -43,10 +43,17 @@ export async function generateCyberModule() {
   } catch (error) {
     console.error('Error generating cyber module:', error);
     
-    if (error.message?.includes('API_KEY_INVALID') || error.message?.includes('API key')) {
-      throw new Error('Invalid API key. Please check your VITE_GEMINI_API_KEY in .env file.');
-    }
+    // Log warning about using fallback data
+    console.warn('Using fallback demo module due to API error. Check API configuration or network connectivity.');
     
-    throw new Error(`Failed to generate module: ${error.message}`);
+    // Return a fallback demo module for testing/demo purposes
+    return {
+      name: "Phoenix Inferno Core",
+      rarity: "Legendary",
+      description: "Born from the eternal flames of the Fire Horse constellation, this legendary core channels raw cosmic energy through crystallized phoenix essence. Its power transcends mortal comprehension, offering those worthy enough to wield it unparalleled dominance over the digital realm.",
+      power: 95,
+      speed: 88,
+      heat: 99
+    };
   }
 }
